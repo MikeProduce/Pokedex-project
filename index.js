@@ -27,7 +27,7 @@ const pokemonType = document.getElementById("type");
 //         );
 // });
 
-for (let i = 1; i <= 10; i++) {
+for (let i = 1; i <= 152; i++) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
         .then((response) => response.json())
         .then((data) => {
