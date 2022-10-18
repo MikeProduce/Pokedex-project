@@ -27,11 +27,12 @@ const pokemonType = document.getElementById("type");
 //         );
 // });
 
-for (let i = 1; i <= 4; i++) {
+for (let i = 1; i <= 10; i++) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
         .then((response) => response.json())
         .then((data) => {
-            document.getElementById("container").innerHTML = `
+            for (let i = 1; i <= 1; i++) {
+                document.getElementById("container").innerHTML += `
                     <div class="card" style="width: 18rem">
                     <img id="image" class="card-img-top" src="${data.sprites.front_default}" />
                     <div class="card-body">
@@ -44,6 +45,7 @@ for (let i = 1; i <= 4; i++) {
                         <li class="list-group-item">Type: ${data.types[0].type.name}</li>
                     </ul>
                 </div>`;
+            }
         });
 }
 
