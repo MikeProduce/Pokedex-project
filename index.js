@@ -8,7 +8,6 @@ const pokemonHP = document.getElementById("hp");
 const pokemonDef = document.getElementById("def");
 const pokemonAtt = document.getElementById("att");
 const pokemonType = document.getElementById("type");
-const container = document.getElementById("container");
 
 // buttonSearch.addEventListener("click", function () {
 //     const lowerCase = pokemonValue.value.toLowerCase();
@@ -28,11 +27,13 @@ const container = document.getElementById("container");
 //         );
 // });
 
-for (let i = 1; i <= 10; i++) {
+const container = document.getElementById("container");
+console.log(container);
+for (let i = 1; i <= 3; i++) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
         .then((response) => response.json())
         .then((data) => {
-            return `
+            document.getElementById("container").innerHTML = `
                     <div class="card" style="width: 18rem">
                     <img id="image" class="card-img-top" src="${data.sprites.front_default}" />
                     <div class="card-body">
