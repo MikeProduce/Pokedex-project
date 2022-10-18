@@ -10,16 +10,18 @@ const pokemonAtt = document.getElementById("att");
 const pokemonType = document.getElementById("type");
 
 buttonSearch.addEventListener("click", function () {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonValue.value}`)
+    const lowerCase = pokemonValue.value.toLowerCase();
+
+    fetch(`https://pokeapi.co/api/v2/pokemon/${lowerCase}`)
         .then((response) => response.json())
         .then(
             (data) => (
-                (pokemonName.textContent += `${data.species.name}`),
+                (pokemonName.textContent += ` ${data.species.name}`),
                 (pokemonImg.src = `${data.sprites.front_default}`),
-                (pokemonHP.textContent += `${data.stats[0].base_stat}`),
-                (pokemonAtt.textContent += `${data.stats[1].base_stat}`),
-                (pokemonDef.textContent += `${data.stats[2].base_stat}`),
-                (pokemonType.textContent += `${data.types[0].type.name}`),
+                (pokemonHP.textContent += ` ${data.stats[0].base_stat}`),
+                (pokemonAtt.textContent += ` ${data.stats[1].base_stat}`),
+                (pokemonDef.textContent += ` ${data.stats[2].base_stat}`),
+                (pokemonType.textContent += ` ${data.types[0].type.name}`),
                 console.log(data)
             )
         );
