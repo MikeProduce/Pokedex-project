@@ -1,60 +1,8 @@
-body {
-    background-color: white;
+.pkmLogo {
+    width: 10%;
 }
-.navbar {
-    background-color: white;
-}
-.navbar,
-.box {
-    display: flex;
-}
-.navbar-items,
-.pokemon-box {
+.card {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10px;
-}
-
-.navbar-items {
-    color: black;
-}
-
-.pokemon-box {
-    height: 100px;
-    width: 100px;
-    background-color: white;
-}
-
-.dropdown {
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    display: inline-block;
-}
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    padding: 12px 16px;
-    z-index: 1;
-    padding: 0;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-li {
-    list-style: none;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-li:hover {
-    background-color: black;
-    color: white;
-}
-.typeUL {
-    margin: 0;
-    padding-left: 0;
+    margin-top: 5rem;
 }

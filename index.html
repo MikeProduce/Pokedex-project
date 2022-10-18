@@ -6,73 +6,122 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <link rel="stylesheet" href="index.css" />
+        <!-- CSS only -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+            crossorigin="anonymous"
+        />
+        <!-- CSS only -->
+        <!-- JavaScript Bundle with Popper -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+            crossorigin="anonymous"
+        ></script>
         <title>Document</title>
     </head>
 
     <body>
         <section>
-            <div class="navbar">
-                <h1 class="navbar-items">
-                    <button id="button" class="searchpokemon">Pokemon</button>
-                    <input
-                        class="pokemonsearch"
-                        id="searchpokemon"
-                        type="text"
+            <nav class="navbar navbar-expand-lg bg-light">
+                <div class="container-fluid">
+                    <img
+                        class="navbar-brand pkmLogo"
+                        src="pokemonlogo.png"
+                        alt=""
                     />
-                </h1>
-                <div class="dropdown">
-                    <h1 class="navbar-items">Type</h1>
-                    <div class="dropdown-content">
-                        <ul class="typeUL">
-                            <li>BUG</li>
-                            <li>DARK</li>
-                            <li>DRAGON</li>
-                            <li>ELECTRIC</li>
-                            <li>FAIRY</li>
-                            <li>FIGHTING</li>
-                            <li>FIRE</li>
-                            <li>FLYING</li>
-                            <li>GHOST</li>
-                            <li>GRASS</li>
-                            <li>GROUND</li>
-                            <li>ICE</li>
-                            <li>NORMAL</li>
-                            <li>POISON</li>
-                            <li>PSYCHIC</li>
-                            <li>ROCK</li>
-                            <li>STEEL</li>
-                            <li>WATER</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <h1 class="navbar-items">Generation</h1>
-                    <div class="dropdown-content">
-                        <ul class="typeUL">
-                            <li>FIRST</li>
-                            <li>SECOND</li>
-                            <li>THIRD</li>
-                            <li>FOURTH</li>
-                            <li>FIFTH</li>
-                            <li>SIXTH</li>
-                            <li>SEVEN</li>
-                            <li>EIGHT</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div
+                        class="collapse navbar-collapse"
+                        id="navbarSupportedContent"
+                    >
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item dropdown">
+                                <a
+                                    class="nav-link dropdown-toggle"
+                                    href="#"
+                                    role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                >
+                                    Type
+                                </a>
+                            </li>
 
-            <div class="box">
-                <div class="pokemon-box">
-                    <ul>
-                        <li>PICTURE: <img id="image" /></li>
-                        <li id="name">NAME:</li>
-                        <li id="hp">HP:</li>
-                        <li id="att">ATT:</li>
-                        <li id="def">DEF:</li>
-                        <li id="type">Type:</li>
-                    </ul>
+                            <li class="nav-item dropdown">
+                                <a
+                                    class="nav-link dropdown-toggle"
+                                    href="#"
+                                    role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                >
+                                    Generation
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="#"
+                                            >Action</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#"
+                                            >Another action</a
+                                        >
+                                    </li>
+                                    <li><hr class="dropdown-divider" /></li>
+                                    <li>
+                                        <a class="dropdown-item" href="#"
+                                            >Something else here</a
+                                        >
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <input
+                                class="form-control me-2"
+                                type="search"
+                                placeholder="Search for a pokemon"
+                                aria-label="Search"
+                                id="searchpokemon"
+                            />
+                            <button
+                                class="btn btn-outline-primary"
+                                type="submit"
+                                id="button"
+                            >
+                                Search
+                            </button>
+                        </form>
+                    </div>
                 </div>
+            </nav>
+        </section>
+        <section>
+            <div class="card" style="width: 18rem">
+                <img id="pokemonImg" class="card-img-top" />
+                <div class="card-body">
+                    <h5 class="card-title" id="name">Name:</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" id="hp">HP:</li>
+                    <li class="list-group-item" id="att">Attack:</li>
+                    <li class="list-group-item" id="def">Defense</li>
+                    <li class="list-group-item" id="type">Type:</li>
+                </ul>
             </div>
         </section>
 

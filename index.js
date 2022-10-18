@@ -16,11 +16,11 @@ buttonSearch.addEventListener("click", function () {
             (data) => (
                 (pokemonName.textContent += `${data.species.name}`),
                 (pokemonImg.src = `${data.sprites.front_default}`),
-                console.log(data),
                 (pokemonHP.textContent += `${data.stats[0].base_stat}`),
                 (pokemonAtt.textContent += `${data.stats[1].base_stat}`),
                 (pokemonDef.textContent += `${data.stats[2].base_stat}`),
-                (pokemonType.textContent += `${data.types[0].type.name}`)
+                (pokemonType.textContent += `${data.types[0].type.name}`),
+                console.log(data)
             )
         );
 });
