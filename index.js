@@ -1,0 +1,37 @@
+"strict";
+
+const pokemonValue = document.getElementById("searchpokemon");
+const buttonSearch = document.getElementById("button");
+const pokemonName = document.getElementById("name");
+const pokemonImg = document.getElementById("image");
+const pokemonHP = document.getElementById("hp");
+const pokemonDef = document.getElementById("def");
+const pokemonAtt = document.getElementById("att");
+const pokemonType = document.getElementById("type");
+
+buttonSearch.addEventListener("click", function () {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonValue.value}`)
+        .then((response) => response.json())
+        .then(
+            (data) => (
+                (pokemonName.textContent += `${data.species.name}`),
+                (pokemonImg.src = `${data.sprites.front_default}`),
+                console.log(data),
+                (pokemonHP.textContent += `${data.stats[0].base_stat}`),
+                (pokemonAtt.textContent += `${data.stats[1].base_stat}`),
+                (pokemonDef.textContent += `${data.stats[2].base_stat}`),
+                (pokemonType.textContent += `${data.types[0].type.name}`)
+            )
+        );
+});
+
+// for (let i = 0; i < 155; i++) {
+//     fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
+//         .then((response) => response.json())
+//         .then((data) => console.log(data));
+// }
+
+// after to fetch all the data you tell the loop to stop after getting to 151 of fetching the said data
+
+// miguel run a loop through everysingle pokemon and everytime you run a loop through one create a text node or create the html part of that box setting
+// for example "li: x"
