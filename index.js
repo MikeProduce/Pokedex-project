@@ -46,38 +46,9 @@ for (let i = 1; i <= 151; i++) {
                 const dataForType = data.types[0].type.name;
                 const dataForNameCapitlized = capitlizeFirstLetter(dataForName);
                 document.getElementById("container").innerHTML += `
-                <div class="row">
-                <div class="col-sm-12 col-lg-4 col-md-6">
-                <img
-                id="image"
-                class="card-img-top"
-                src="${dataForImg}"/>
-                <div class="card-body">
-                <h3 class="card-title" id="name">${dataForNameCapitlized}</h3>
-                HP - ${dataForHp}
-                <div>
-                    <div
-                        class="progress-bar bg-warning"
-                        role="progressbar"
-                        aria-label="Success example"
-                        style="width: ${dataForHp}%"
-                        aria-valuenow="25"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                    ></div>
-                </div>
-
-                </div>
-                </div>
-                `;
-            }
-        });
-}
-
-{
-    /* <div
-            class="card shadow-lg p-3 mb-5 bg-body rounded"
-            style="width: 15rem"
+                <div
+            class="card shadow-lg p-3 mb-5 bg-body rounded col col-lg-4 "
+            
         >
             <img
                 id="image"
@@ -124,5 +95,8 @@ for (let i = 1; i <= 151; i++) {
                 </div>
                 Type - ${dataForType}
             </div>
-        </div> */
+        </div> 
+                `;
+            }
+        });
 }
