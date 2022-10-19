@@ -50,10 +50,10 @@ for (let i = 1; i <= 151; i++) {
                 <img id="image" class="card-img-top" src="${dataForImg}"/>
                 <div class="ui">
                     <h3 id="name">${dataForNameCapitlized}</h3>
-                        HP - ${dataForHp}
+                        <div class="hp">HP - ${dataForHp} </div>
                             <div class="progress">
-                                <div
-                                    class="progress-bar bg-warning"
+                                <div 
+                                    class="progress-bar bg-warning "
                                     role="progressbar"
                                     aria-label="Success example"
                                     style="width: ${dataForHp}%"
@@ -62,7 +62,7 @@ for (let i = 1; i <= 151; i++) {
                                     aria-valuemax="100">
                                 </div>
                             </div>
-                        Attack - ${dataForAttack}
+                            <div class="hp">Attack - ${dataForAttack}</div>
                             <div class="progress">
                                 <div
                                     class="progress-bar bg-danger"
@@ -74,7 +74,7 @@ for (let i = 1; i <= 151; i++) {
                                     aria-valuemax="100"
                                 ></div>
                             </div>
-                        Defense - ${dataforDefense}
+                            <div class="hp">Defense - ${dataforDefense}</div>
                             <div class="progress">
                                 <div
                                     class="progress-bar bg-info"
@@ -86,10 +86,12 @@ for (let i = 1; i <= 151; i++) {
                                     aria-valuemax="100"
                                 ></div>
                             </div>
-                        Type - ${dataForType}
+                            <div class="hp">Type - ${dataForType}</div>
                         </div>
                     </div>
                 </div>`;
             }
         });
 }
+
+// miguel add a modal that gives more information

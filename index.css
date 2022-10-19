@@ -20,3 +20,11 @@ h3 {
 .card-img-top {
     image-rendering: pixelated;
 }
+
+.progress {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.hp {
+    margin-left: 10px;
+}
