@@ -1,5 +1,20 @@
+* {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-family: "Silkscreen", cursive;
+}
+
 .pkmLogo {
     width: 10%;
+}
+
+h3 {
+    text-align: center;
+}
+.ui {
+    border-style: double;
+    border-width: 5px;
+    border-color: black;
+    border-radius: px;
 }
 
 .card-img-top {

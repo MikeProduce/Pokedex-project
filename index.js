@@ -46,120 +46,50 @@ for (let i = 1; i <= 151; i++) {
                 const dataForType = data.types[0].type.name;
                 const dataForNameCapitlized = capitlizeFirstLetter(dataForName);
                 document.getElementById("container").innerHTML += `
-                
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                    <img
-                id="image"
-                class="card-img-top"
-                src="${dataForImg}"
-            />
-            <div>
-                <h3 id="name">${dataForNameCapitlized}</h3>
-                HP - ${dataForHp}
-                <div class="progress">
-                    <div
-                        class="progress-bar bg-warning"
-                        role="progressbar"
-                        aria-label="Success example"
-                        style="width: ${dataForHp}%"
-                        aria-valuenow="25"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                    ></div>
-                </div>
-                Attack - ${dataForAttack}
-                <div class="progress">
-                    <div
-                        class="progress-bar bg-danger"
-                        role="progressbar"
-                        aria-label="Success example"
-                        style="width: ${dataForAttack}%"
-                        aria-valuenow="25"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                    ></div>
-                </div>
-                Defense - ${dataforDefense}
-                <div class="progress">
-                    <div
-                        class="progress-bar bg-info"
-                        role="progressbar"
-                        aria-label="Success example"
-                        style="width: ${dataforDefense}%"
-                        aria-valuenow="25"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                    ></div>
-                </div>
-                Type - ${dataForType}
-            </div>
-        </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                <div class="col-lg-4 col-md-6 col-sm-12 px-5 gy-5">
+                <img id="image" class="card-img-top" src="${dataForImg}"/>
+                <div class="ui">
+                    <h3 id="name">${dataForNameCapitlized}</h3>
+                        HP - ${dataForHp}
+                            <div class="progress">
+                                <div
+                                    class="progress-bar bg-warning"
+                                    role="progressbar"
+                                    aria-label="Success example"
+                                    style="width: ${dataForHp}%"
+                                    aria-valuenow="25"
+                                    aria-valuemin="0"
+                                    aria-valuemax="100">
+                                </div>
+                            </div>
+                        Attack - ${dataForAttack}
+                            <div class="progress">
+                                <div
+                                    class="progress-bar bg-danger"
+                                    role="progressbar"
+                                    aria-label="Success example"
+                                    style="width: ${dataForAttack}%"
+                                    aria-valuenow="25"
+                                    aria-valuemin="0"
+                                    aria-valuemax="100"
+                                ></div>
+                            </div>
+                        Defense - ${dataforDefense}
+                            <div class="progress">
+                                <div
+                                    class="progress-bar bg-info"
+                                    role="progressbar"
+                                    aria-label="Success example"
+                                    style="width: ${dataforDefense}%"
+                                    aria-valuenow="25"
+                                    aria-valuemin="0"
+                                    aria-valuemax="100"
+                                ></div>
+                            </div>
+                        Type - ${dataForType}
+                        </div>
                     </div>
-                    
-                
-                
-                `;
+                </div>`;
             }
         });
-}
-
-{
-    /* <div
-            class="card shadow-lg p-3 mb-5 bg-body rounded col col-lg-4 "
-
-        >
-            <img
-                id="image"
-                class="card-img-top"
-                src="${dataForImg}"
-            />
-            <div class="card-body">
-                <h3 class="card-title" id="name">${dataForNameCapitlized}</h3>
-                HP - ${dataForHp}
-                <div class="progress">
-                    <div
-                        class="progress-bar bg-warning"
-                        role="progressbar"
-                        aria-label="Success example"
-                        style="width: ${dataForHp}%"
-                        aria-valuenow="25"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                    ></div>
-                </div>
-                Attack - ${dataForAttack}
-                <div class="progress">
-                    <div
-                        class="progress-bar bg-danger"
-                        role="progressbar"
-                        aria-label="Success example"
-                        style="width: ${dataForAttack}%"
-                        aria-valuenow="25"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                    ></div>
-                </div>
-                Defense - ${dataforDefense}
-                <div class="progress">
-                    <div
-                        class="progress-bar bg-info"
-                        role="progressbar"
-                        aria-label="Success example"
-                        style="width: ${dataforDefense}%"
-                        aria-valuenow="25"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                    ></div>
-                </div>
-                Type - ${dataForType}
-            </div>
-        </div> */
 }
