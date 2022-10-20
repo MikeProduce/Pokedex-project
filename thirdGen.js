@@ -29,11 +29,10 @@ const pokemonType = document.getElementById("type");
 //         );
 // });
 
-for (let i = 1; i <= 151; i++) {
+for (let i = 252; i <= 386; i++) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
             for (let i = 1; i <= 1; i++) {
                 function capitlizeFirstLetter(string) {
                     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -87,13 +86,7 @@ for (let i = 1; i <= 151; i++) {
                                 ></div>
                             </div>
                             <div class="hp">Type - ${dataForType}</div>
-                            <button class="myBtn">Open Modal</button>
-            <div class="myModal modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <p>Some text in the Modal..</p>
-                </div>
-            </div>
+ 
                         </div>
                     </div>
                 </div>
@@ -101,30 +94,3 @@ for (let i = 1; i <= 151; i++) {
             }
         });
 }
-
-// Get the modal
-const modal = document.querySelectorAll(".myModal");
-
-// Get the button that opens the modal
-const btn = document.querySelectorAll(".myBtn");
-
-// Get the <span> element that closes the modal
-const span = document.querySelectorAll(".close")[0];
-
-// When the user clicks on the button, open the modal
-btn.addEventListener("click", function () {
-    modal.style.display = "block";
-});
-
-// When the user clicks on <span> (x), close the modal
-span.addEventListener("click", function () {
-    modal.style.display = "none";
-});
-
-window.addEventListener("click", function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-});
-
-// miguel add a modal that gives more information
