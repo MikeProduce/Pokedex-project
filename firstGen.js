@@ -33,6 +33,7 @@ for (let i = 1; i <= 151; i++) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
         .then((response) => response.json())
         .then((data) => {
+            console.log(data);
             for (let i = 1; i <= 1; i++) {
                 function capitlizeFirstLetter(string) {
                     return string.charAt(0).toUpperCase() + string.slice(1);
