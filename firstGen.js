@@ -69,6 +69,7 @@ function showgallary(data) {
                     ></div>
                 </div>
                 <div class="hp">Type - ${dataForType}</div>
+                <button class='moreInfoButton'>More info...</button>
 
             </div>
         </div>
