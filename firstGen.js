@@ -15,8 +15,6 @@ for (let i = 1; i <= 151; i++) {
         .then((data) => showgallary(data));
 }
 
-document.getElementById();
-
 function showgallary(data) {
     for (let i = 1; i <= 1; i++) {
         function capitlizeFirstLetter(string) {

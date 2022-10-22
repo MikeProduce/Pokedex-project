@@ -24,62 +24,60 @@
 </head>
 
 <body>
-  <section>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <img class="navbar-brand pkmLogo" src="pokemonlogo.png" alt="" />
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Type
-              </a>
-            </li>
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Generation
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="./firstGen.html">First Generation</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="./secondGen.html">Second Generation</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="./thirdGen.html">Third Generation</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="./fourthGen.html">Fourth Generation</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="./fifthGen.html">Fifth Generation</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="./sixthGen.html">Sixth Generation</a>
-                </li>
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <h1>Pokemon</h1>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Type
+            </a>
+          </li>
 
-              </ul>
-            </li>
-          </ul>
-          <div class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search for a pokemon" aria-label="Search"
-              id="searchpokemon" />
-            <button class="btn btn-outline-primary" type="submit" id="button">
-              Search
-            </button>
-          </div>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Generation
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="./firstGen.html">First Generation</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="./secondGen.html">Second Generation</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="./thirdGen.html">Third Generation</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="./fourthGen.html">Fourth Generation</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="./fifthGen.html">Fifth Generation</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="./sixthGen.html">Sixth Generation</a>
+              </li>
+
+            </ul>
+          </li>
+        </ul>
+        <div class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search for a pokemon" aria-label="Search"
+            id="searchpokemon" />
+          <button class="btn btn-outline-primary" type="submit" id="button">
+            Search
+          </button>
         </div>
       </div>
-    </nav>
-  </section>
+    </div>
+  </nav>
+
   <section class="container">
     <div class="row row-cols" id="container"></div>
 
