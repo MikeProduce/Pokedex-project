@@ -23,7 +23,8 @@ function showgallary(data) {
         dataid.sort(function (a, b) {
             return console.log(b - a);
         });
-
+        console.log("data");
+        console.log("data.id");
         const dataForName = data.species.name;
         const dataForImg = data.sprites.front_default;
         const dataForHp = data.stats[0].base_stat;
