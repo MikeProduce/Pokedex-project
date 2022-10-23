@@ -18,11 +18,7 @@ function showgallary(data) {
         function capitlizeFirstLetter(string) {
             return string.charAt(0).toUpperCase() + string.slice(1);
         }
-        const dataid = data.id;
-        console.log(dataid);
-        dataid.sort(function (a, b) {
-            return console.log(b - a);
-        });
+
         console.log("data");
         console.log("data.id");
         const dataForName = data.species.name;
