@@ -14,13 +14,21 @@ for (let i = 1; i <= 151; i++) {
 }
 
 function showgallary(data) {
+    // datasort.sort(function (a, b) {
+    //     return console.log(b - a);
+    // });
+    const datasort = data.id;
+
+    let a = [];
+    a.push(datasort);
+
+    var merged = [].concat.apply([], a);
+    console.log(merged);
     for (let i = 1; i <= 1; i++) {
         function capitlizeFirstLetter(string) {
             return string.charAt(0).toUpperCase() + string.slice(1);
         }
 
-        console.log("data");
-        console.log("data.id");
         const dataForName = data.species.name;
         const dataForImg = data.sprites.front_default;
         const dataForHp = data.stats[0].base_stat;
