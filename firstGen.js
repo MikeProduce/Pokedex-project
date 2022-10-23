@@ -7,8 +7,6 @@ const pokemonDef = document.getElementById("def");
 const pokemonAtt = document.getElementById("att");
 const pokemonType = document.getElementById("type");
 
-const buttonSearch = document.getElementById("button");
-
 for (let i = 1; i <= 151; i++) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
         .then((response) => response.json())
@@ -20,6 +18,12 @@ function showgallary(data) {
         function capitlizeFirstLetter(string) {
             return string.charAt(0).toUpperCase() + string.slice(1);
         }
+        const dataid = data.id;
+        console.log(dataid);
+        dataid.sort(function (a, b) {
+            return console.log(b - a);
+        });
+
         const dataForName = data.species.name;
         const dataForImg = data.sprites.front_default;
         const dataForHp = data.stats[0].base_stat;
@@ -27,6 +31,7 @@ function showgallary(data) {
         const dataforDefense = data.stats[2].base_stat;
         const dataForType = data.types[0].type.name;
         const dataForNameCapitlized = capitlizeFirstLetter(dataForName);
+
         document.getElementById("container").innerHTML += `
     <div class="col-lg-4 col-md-6 col-sm-12 px-5 gy-5 pokemoncard">
     <img id="image" class="card-img-top" src="${dataForImg}"/>
@@ -69,7 +74,8 @@ function showgallary(data) {
                     ></div>
                 </div>
                 <div class="hp">Type - ${dataForType}</div>
-                <button class='moreInfoButton'>More info...</button>
+            
+
 
             </div>
         </div>
