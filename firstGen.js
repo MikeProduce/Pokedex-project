@@ -19,6 +19,7 @@ const loadData = async (id) => {
 fetchPokemon();
 
 function showgallary(data) {
+    // console.log(data);
     for (let i = 1; i <= 1; i++) {
         function capitlizeFirstLetter(string) {
             return string.charAt(0).toUpperCase() + string.slice(1);
@@ -77,9 +78,8 @@ function showgallary(data) {
                 <div class="hp">Type - ${dataForType}</div>
 
 
-
                                         <!-- Trigger/Open The Modal -->
-                <button class="modal-open" id="pokemon${dataID}">${dataID}</button>
+                <button class="modal-open" id="pokemon${dataID}">More Information</button>
 
                 <!-- The Modal -->
                 <div id="${dataID}" class="modal">
@@ -87,7 +87,7 @@ function showgallary(data) {
                 <!-- Modal content -->
                 <div class="modal-content">
                     <span class="close">&times;</span>
-                    <p>Some text in the Modal..</p>
+                    <img id="image" class="card-img-top" src="${dataForImg}"/>
                 </div>
                 </div>
 
