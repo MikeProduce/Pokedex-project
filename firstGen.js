@@ -13,13 +13,13 @@ const loadData = async (id) => {
         const data = await res.json();
         showgallary(data);
     } catch (err) {
-        // console.log(err);
+        console.log(err);
     }
 };
 fetchPokemon();
 
 function showgallary(data) {
-    console.log(data);
+    // console.log(data);
     for (let i = 1; i <= 1; i++) {
         function capitlizeFirstLetter(string) {
             return string.charAt(0).toUpperCase() + string.slice(1);
@@ -190,17 +190,17 @@ function showgallary(data) {
     }
 
     function nomoreprint() {
-        for (let i = 1; i <= 151; i++) {
-            const pokemonone = document.getElementById(`pokemon${i}`);
+        for (let a = 1; a <= 151; a++) {
+            const pokemonone = document.getElementById(`pokemon${a}`);
             // console.log(pokemonone);
-            const closeModal = document.getElementById(`${i}`);
+            const closeModal = document.getElementById(`${a}`);
 
             closeModal.addEventListener("click", () => {
-                document.getElementById(`${i}`).style.display = "none";
+                document.getElementById(`${a}`).style.display = "none";
             });
 
             pokemonone.addEventListener("click", () => {
-                document.getElementById(`${i}`).style.display = "block";
+                document.getElementById(`${a}`).style.display = "block";
             });
         }
     }

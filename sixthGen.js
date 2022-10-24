@@ -1,7 +1,7 @@
 "strict";
 
 const fetchPokemon = async () => {
-    for (let i = 1; i <= 151; i++) {
+    for (let i = 650; i <= 721; i++) {
         await loadData(i);
     }
 };
@@ -13,13 +13,13 @@ const loadData = async (id) => {
         const data = await res.json();
         showgallary(data);
     } catch (err) {
-        // console.log(err);
+        console.log(err);
     }
 };
 fetchPokemon();
 
 function showgallary(data) {
-    console.log(data);
+    // console.log(data);
     for (let i = 1; i <= 1; i++) {
         function capitlizeFirstLetter(string) {
             return string.charAt(0).toUpperCase() + string.slice(1);
@@ -190,7 +190,7 @@ function showgallary(data) {
     }
 
     function nomoreprint() {
-        for (let i = 1; i <= 151; i++) {
+        for (let i = 650; i <= 721; i++) {
             const pokemonone = document.getElementById(`pokemon${i}`);
             // console.log(pokemonone);
             const closeModal = document.getElementById(`${i}`);

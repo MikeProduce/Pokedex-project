@@ -1,7 +1,7 @@
 "strict";
 
 const fetchPokemon = async () => {
-    for (let i = 1; i <= 151; i++) {
+    for (let i = 252; i <= 386; i++) {
         await loadData(i);
     }
 };
@@ -190,7 +190,7 @@ function showgallary(data) {
     }
 
     function nomoreprint() {
-        for (let i = 1; i <= 151; i++) {
+        for (let i = 252; i <= 386; i++) {
             const pokemonone = document.getElementById(`pokemon${i}`);
             // console.log(pokemonone);
             const closeModal = document.getElementById(`${i}`);
