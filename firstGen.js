@@ -13,6 +13,20 @@ for (let i = 1; i <= 151; i++) {
         .then((data) => showgallary(data));
 }
 
+const loadData = async () => {
+    try {
+        const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+        const res = await fetch(url);
+        console.log(res.ok);
+        const data = await res.json();
+        return data;
+    } catch (err) {
+        console.log(err);
+    }
+};
+
+loadData().then((data) => console.log(data));
+
 function showgallary(data) {
     // datasort.sort(function (a, b) {
     //     return console.log(b - a);
@@ -39,7 +53,7 @@ function showgallary(data) {
         <h3 id="name">${dataForNameCapitlized}</h3>
             <div class="hp">HP - ${dataForHp} </div>
                 <div class="progress">
-                    <div 
+                    <div
                         class="progress-bar bg-warning "
                         role="progressbar"
                         aria-label="Success example"
@@ -74,8 +88,6 @@ function showgallary(data) {
                     ></div>
                 </div>
                 <div class="hp">Type - ${dataForType}</div>
-            
-
 
             </div>
         </div>
