@@ -36,6 +36,9 @@ function showgallary(data) {
         const dataID = data.id;
         const pokeWeight = data.weight;
         const pokeHeight = data.height;
+        const speed = data.stats[5].base_stat;
+        const specDef = data.stats[4].base_stat;
+        const specAtt = data.stats[3].base_stat;
 
         document.getElementById("container").innerHTML += `
     <div class="col-lg-4 col-md-6 col-sm-12 px-5 gy-5 pokemoncard">
@@ -88,23 +91,88 @@ function showgallary(data) {
                 <div class="modal-content">
                     <span class="close">X</span>
                 <div class="flexmodal">
-                <div>
                     <img id="image" class="card-img-top" src="${PokeShinyImg}"/>
-                    <p>Shiny Form</p>
-                    </div>
                     <div class="left align">
+                    <p>Pokedex number - ${dataID}</p>
+                    <p>Shiny Color</p>
                     <p>Height - ${pokeHeight}</p>
                     <p>Weight - ${pokeWeight}</p>
                     <p>Abilities - ${abilities}</p>
                 </div>
                 </div>
                 <div class="moreStats">
-                <p>hello<p>
-                <p>hello<p>
-                <p>hello<p>
-                <p>hello<p>
-                <p>hello<p>
-                <p>hello<p>
+                <div class="hp">Attack - ${dataForAttack}</div>
+                <div class="progress">
+                    <div
+                        class="progress-bar bg-danger"
+                        role="progressbar"
+                        aria-label="Success example"
+                        style="width: ${dataForAttack}%"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                    ></div>
+                </div>
+                <div class="hp">Defense - ${dataforDefense}</div>
+                <div class="progress">
+                    <div
+                        class="progress-bar bg-info"
+                        role="progressbar"
+                        aria-label="Success example"
+                        style="width: ${dataforDefense}%"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                    ></div>
+                </div>
+                <div class="hp">HP - ${dataForHp} </div>
+                <div class="progress">
+                    <div
+                        class="progress-bar bg-warning "
+                        role="progressbar"
+                        aria-label="Success example"
+                        style="width: ${dataForHp}%"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100">
+                    </div>
+                </div>
+                <div class="hp">Spec Def - ${specDef}</div>
+                <div class="progress">
+                    <div
+                        class="progress-bar bg-success"
+                        role="progressbar"
+                        aria-label="Success example"
+                        style="width: ${specDef}%"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                    ></div>
+                </div>
+                <div class="hp">Spec Att - ${specAtt}</div>
+                <div class="progress">
+                    <div
+                        class="progress-bar bg-primary"
+                        role="progressbar"
+                        aria-label="Success example"
+                        style="width: ${specAtt}%"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                    ></div>
+                </div>
+                <div class="hp">Speed - ${speed}</div>
+                <div class="progress">
+                    <div
+                        class="progress-bar bg-dark"
+                        role="progressbar"
+                        aria-label="Success example"
+                        style="width: ${speed}%"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                    ></div>
+                </div>
                 </div>
 
                 
