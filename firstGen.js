@@ -206,3 +206,5 @@ function showgallary(data) {
     }
     nomoreprint();
 }
+
+// Miguel you have to fix the size of the images, and then you have to fix all the errors coming out of the eventlinsteners
