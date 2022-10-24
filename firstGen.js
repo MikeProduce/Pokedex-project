@@ -1,38 +1,24 @@
 "strict";
 
-const pokemonName = document.getElementById("name");
-const pokemonImg = document.getElementById("image");
-const pokemonHP = document.getElementById("hp");
-const pokemonDef = document.getElementById("def");
-const pokemonAtt = document.getElementById("att");
-const pokemonType = document.getElementById("type");
+const fetchPokemon = async () => {
+    for (let i = 1; i <= 151; i++) {
+        await loadData(i);
+    }
+};
 
-for (let i = 1; i <= 151; i++) {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
-        .then((response) => response.json())
-        .then((data) => showgallary(data));
-}
-
-const loadData = async () => {
+const loadData = async (id) => {
     try {
-        const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+        const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
         const res = await fetch(url);
-        console.log(res.ok);
         const data = await res.json();
-        return data;
+        showgallary(data);
     } catch (err) {
         console.log(err);
     }
 };
-
-loadData().then((data) => console.log(data));
+fetchPokemon();
 
 function showgallary(data) {
-    // datasort.sort(function (a, b) {
-    //     return console.log(b - a);
-    // });
-    const datasort = data.id;
-
     for (let i = 1; i <= 1; i++) {
         function capitlizeFirstLetter(string) {
             return string.charAt(0).toUpperCase() + string.slice(1);
@@ -45,6 +31,7 @@ function showgallary(data) {
         const dataforDefense = data.stats[2].base_stat;
         const dataForType = data.types[0].type.name;
         const dataForNameCapitlized = capitlizeFirstLetter(dataForName);
+        const dataID = data.id;
 
         document.getElementById("container").innerHTML += `
     <div class="col-lg-4 col-md-6 col-sm-12 px-5 gy-5 pokemoncard">
@@ -89,9 +76,44 @@ function showgallary(data) {
                 </div>
                 <div class="hp">Type - ${dataForType}</div>
 
+
+
+                                        <!-- Trigger/Open The Modal -->
+                <button class="modal-open" id="pokemon${dataID}">${dataID}</button>
+
+                <!-- The Modal -->
+                <div id="${dataID}" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>Some text in the Modal..</p>
+                </div>
+                </div>
+
+
+
+                        
             </div>
         </div>
     </div>
     `;
     }
+
+    function nomoreprint() {
+        for (let i = 1; i <= 151; i++) {
+            const pokemonone = document.getElementById(`pokemon${i}`);
+            console.log(pokemonone);
+            const closeModal = document.getElementById(`${i}`);
+
+            closeModal.addEventListener("click", () => {
+                document.getElementById(`${i}`).style.display = "none";
+            });
+
+            pokemonone.addEventListener("click", () => {
+                document.getElementById(`${i}`).style.display = "block";
+            });
+        }
+    }
+    nomoreprint();
 }
