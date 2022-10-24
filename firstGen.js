@@ -19,9 +19,6 @@ function showgallary(data) {
     // });
     const datasort = data.id;
 
-    for (var x = 0; x < (datasort.length); x++) {
-        var UserDataEntry = {};
-    console.log(myArr);
     for (let i = 1; i <= 1; i++) {
         function capitlizeFirstLetter(string) {
             return string.charAt(0).toUpperCase() + string.slice(1);
