@@ -19,6 +19,7 @@ h3 {
 
 .card-img-top {
     image-rendering: pixelated;
+    max-width: 100%;
 }
 
 .progress {
@@ -52,7 +53,7 @@ h1 {
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    max-width: 80%;
+    max-width: 100%;
 }
 
 /* The Close Button */
@@ -75,4 +76,15 @@ h1 {
 }
 .modal-open {
     margin-bottom: 10px;
+}
+.flexmodal {
+    text-align: left;
+    display: flex;
+}
+.moreStats {
+    text-align: left;
+}
+.close {
+    text-align: left;
+    color: black;
 }

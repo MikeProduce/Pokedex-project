@@ -13,18 +13,19 @@ const loadData = async (id) => {
         const data = await res.json();
         showgallary(data);
     } catch (err) {
-        console.log(err);
+        // console.log(err);
     }
 };
 fetchPokemon();
 
 function showgallary(data) {
-    // console.log(data);
+    console.log(data);
     for (let i = 1; i <= 1; i++) {
         function capitlizeFirstLetter(string) {
             return string.charAt(0).toUpperCase() + string.slice(1);
         }
-
+        const PokeShinyImg = data.sprites.front_shiny;
+        const abilities = data.abilities[0].ability.name;
         const dataForName = data.species.name;
         const dataForImg = data.sprites.front_default;
         const dataForHp = data.stats[0].base_stat;
@@ -33,6 +34,8 @@ function showgallary(data) {
         const dataForType = data.types[0].type.name;
         const dataForNameCapitlized = capitlizeFirstLetter(dataForName);
         const dataID = data.id;
+        const pokeWeight = data.weight;
+        const pokeHeight = data.height;
 
         document.getElementById("container").innerHTML += `
     <div class="col-lg-4 col-md-6 col-sm-12 px-5 gy-5 pokemoncard">
@@ -76,18 +79,36 @@ function showgallary(data) {
                     ></div>
                 </div>
                 <div class="hp">Type - ${dataForType}</div>
-
-
-                                        <!-- Trigger/Open The Modal -->
                 <button class="modal-open" id="pokemon${dataID}">More Information</button>
 
-                <!-- The Modal -->
+    
                 <div id="${dataID}" class="modal">
 
                 <!-- Modal content -->
                 <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <img id="image" class="card-img-top" src="${dataForImg}"/>
+                    <span class="close">X</span>
+                <div class="flexmodal">
+                <div>
+                    <img id="image" class="card-img-top" src="${PokeShinyImg}"/>
+                    <p>Shiny Form</p>
+                    </div>
+                    <div class="left align">
+                    <p>Height - ${pokeHeight}</p>
+                    <p>Weight - ${pokeWeight}</p>
+                    <p>Abilities - ${abilities}</p>
+                </div>
+                </div>
+                <div class="moreStats">
+                <p>hello<p>
+                <p>hello<p>
+                <p>hello<p>
+                <p>hello<p>
+                <p>hello<p>
+                <p>hello<p>
+                </div>
+
+                
+
                 </div>
                 </div>
 
@@ -103,7 +124,7 @@ function showgallary(data) {
     function nomoreprint() {
         for (let i = 1; i <= 151; i++) {
             const pokemonone = document.getElementById(`pokemon${i}`);
-            console.log(pokemonone);
+            // console.log(pokemonone);
             const closeModal = document.getElementById(`${i}`);
 
             closeModal.addEventListener("click", () => {
