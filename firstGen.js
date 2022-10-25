@@ -190,7 +190,7 @@ function showgallary(data) {
     }
 
     function nomoreprint() {
-        for (let a = 1; a <= 151; a++) {
+        for (let a = 1; a <= 2; a++) {
             const pokemonone = document.getElementById(`pokemon${a}`);
             // console.log(pokemonone);
             const closeModal = document.getElementById(`${a}`);
