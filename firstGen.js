@@ -39,6 +39,7 @@ function showgallary(data) {
         const speed = data.stats[5].base_stat;
         const specDef = data.stats[4].base_stat;
         const specAtt = data.stats[3].base_stat;
+        console.log(dataForName);
 
         document.getElementById(
             "container"
