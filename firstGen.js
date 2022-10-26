@@ -147,16 +147,15 @@ function doSomething(e) {
 
 const serachInput = document.querySelector("[data-search]");
 
-let users = [];
+let users1 = [];
 // console.log(users);
 
 serachInput.addEventListener("input", (e) => {
     const value = e.target.value;
-    users.forEach((user) => {
-        console.log(user);
-        const isVisible = user.includes(value);
-        // document.getElementsByClassName("hide").toggle("hide", !isVisible);
-    });
+
+    if (users1.includes(value)) {
+        console.log("hello");
+    }
 });
 
 function searchFunction(data) {
@@ -166,6 +165,9 @@ function searchFunction(data) {
     // console.log(entries);
     users = entries.map((entries) => {
         const name = entries[1].species.name;
+        // console.log(name);
         return { names: name };
     });
+    users = users[0].names;
+    users1.push(users);
 }
