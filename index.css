@@ -1,7 +1,7 @@
 * {
     font-family: "Plus Jakarta Sans", sans-serif;
     font-family: "Silkscreen", cursive;
-    /* background-color: black; */
+    background-color: black;
 }
 
 .pkmLogo {
@@ -54,7 +54,7 @@ h1 {
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    max-width: 500px;
+    max-width: 550px;
 }
 
 /* The Close Button */
@@ -92,7 +92,6 @@ h1 {
 
 @media screen and (max-width: 441px) {
     .modal-content {
-        min-width: 100%;
         height: auto;
     }
 }

@@ -65,7 +65,6 @@ function showgallary(data) {
         <div class="hp">Type - ${dataForType}</div>
         <button class="modal-open" id="pokemon${dataID}">More Information</button>
 
-
         <div id="${dataID}" class="modal">
 
             <!-- Modal content -->
@@ -116,8 +115,6 @@ function showgallary(data) {
                             style="width: ${speed}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                 </div>
-
-
 
             </div>
         </div>
