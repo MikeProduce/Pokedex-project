@@ -12,6 +12,7 @@ const loadData = async (id) => {
         const res = await fetch(url);
         const data = await res.json();
         showgallary(data);
+        searchFunction(data);
     } catch (err) {
         console.log(err);
     }
@@ -19,7 +20,6 @@ const loadData = async (id) => {
 fetchPokemon();
 
 function showgallary(data) {
-    // console.log(data);
     for (let i = 1; i <= 1; i++) {
         function capitlizeFirstLetter(string) {
             return string.charAt(0).toUpperCase() + string.slice(1);
@@ -39,11 +39,11 @@ function showgallary(data) {
         const speed = data.stats[5].base_stat;
         const specDef = data.stats[4].base_stat;
         const specAtt = data.stats[3].base_stat;
-        console.log(dataForName);
+        // console.log(dataForName);
 
         document.getElementById(
             "container"
-        ).innerHTML += `<div class="col-lg-4 col-md-6 col-sm-12 px-5 gy-5 pokemoncard">
+        ).innerHTML += `<div class="col-lg-4 col-md-6 col-sm-12 px-5 gy-5 pokemoncard hide">
     <img class="card-img-top" src="${dataForImg}" />
     <div class="ui">
         <h3 class="name">${dataForNameCapitlized}</h3>
@@ -145,4 +145,27 @@ function doSomething(e) {
     }
 }
 
-// Miguel you have to fix the size of the images, and then you have to fix all the errors coming out of the eventlinsteners
+const serachInput = document.querySelector("[data-search]");
+
+let users = [];
+// console.log(users);
+
+serachInput.addEventListener("input", (e) => {
+    const value = e.target.value;
+    users.forEach((user) => {
+        console.log(user);
+        const isVisible = user.includes(value);
+        // document.getElementsByClassName("hide").toggle("hide", !isVisible);
+    });
+});
+
+function searchFunction(data) {
+    obj = { data };
+    const entries = Object.entries(obj);
+
+    // console.log(entries);
+    users = entries.map((entries) => {
+        const name = entries[1].species.name;
+        return { names: name };
+    });
+}
