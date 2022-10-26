@@ -149,12 +149,14 @@ const serachInput = document.querySelector("[data-search]");
 
 let users1 = [];
 // console.log(users);
+const allHTML = document.getElementsByClassName("pokemoncard");
+console.log(allHTML.innerText);
 
 serachInput.addEventListener("input", (e) => {
     const value = e.target.value;
 
-    if (users1.includes(value)) {
-        console.log("hello");
+    if (users1.includes(value) === true) {
+        document.querySelectorAll("pokemoncard").style.display = "none";
     }
 });
 
