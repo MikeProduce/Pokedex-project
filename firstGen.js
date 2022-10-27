@@ -43,7 +43,7 @@ function showgallary(data) {
 
         document.getElementById(
             "container"
-        ).innerHTML += `<div class="col-lg-4 col-md-6 col-sm-12 px-5 gy-5 pokemoncard hide">
+        ).innerHTML += `<div class="col-lg-4 col-md-6 col-sm-12 px-5 gy-5 pokemoncard ${dataForName}  hide">
     <img class="card-img-top" src="${dataForImg}" />
     <div class="ui">
         <h3 class="name">${dataForNameCapitlized}</h3>
@@ -148,7 +148,8 @@ function doSomething(e) {
 const serachInput = document.querySelector("[data-search]");
 
 let users1 = [];
-// console.log(users);
+console.log(users1);
+
 const allHTML = document.getElementsByClassName("pokemoncard");
 console.log(allHTML.innerText);
 
@@ -156,7 +157,8 @@ serachInput.addEventListener("input", (e) => {
     const value = e.target.value;
 
     if (users1.includes(value) === true) {
-        document.querySelectorAll("pokemoncard").style.display = "none";
+        console.log("hello");
+        document.querySelector(value).style.display = "none";
     }
 });
 
@@ -173,3 +175,4 @@ function searchFunction(data) {
     users = users[0].names;
     users1.push(users);
 }
+//  i am stuck i cant figure out how to target my element
