@@ -11,7 +11,7 @@ const loadData = async (id) => {
         const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
         const res = await fetch(url);
         const data = await res.json();
-        showgallary(data);
+        pokemonCard(data);
         searchFunction(data);
     } catch (err) {
         console.log(err);
@@ -19,119 +19,119 @@ const loadData = async (id) => {
 };
 fetchPokemon();
 
-function showgallary(data) {
-    for (let i = 1; i <= 1; i++) {
-        function capitlizeFirstLetter(string) {
-            return string.charAt(0).toUpperCase() + string.slice(1);
-        }
-        const PokeShinyImg = data.sprites.front_shiny;
-        const abilities = data.abilities[0].ability.name;
-        const dataForName = data.species.name;
-        const dataForImg = data.sprites.front_default;
-        const dataForHp = data.stats[0].base_stat;
-        const dataForAttack = data.stats[1].base_stat;
-        const dataforDefense = data.stats[2].base_stat;
-        const dataForType = data.types[0].type.name;
-        const dataForNameCapitlized = capitlizeFirstLetter(dataForName);
-        const dataID = data.id;
-        const pokeWeight = data.weight;
-        const pokeHeight = data.height;
-        const speed = data.stats[5].base_stat;
-        const specDef = data.stats[4].base_stat;
-        const specAtt = data.stats[3].base_stat;
-        // console.log(dataForName);
+function pokemonCard(data) {
+    function capitlizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+    const pokemonShinyImg = data.sprites.front_shiny;
+    const pokemonAbilities = data.abilities[0].ability.name;
+    const pokemonNameLowerCase = data.species.name;
+    const pokemonImage = data.sprites.front_default;
+    const pokemonHp = data.stats[0].base_stat;
+    const pokemonAttack = data.stats[1].base_stat;
+    const pokemonDefense = data.stats[2].base_stat;
+    const pokemonType = data.types[0].type.name;
+    const pokemonName = capitlizeFirstLetter(pokemonNameLowerCase);
+    const pokemonID = data.id;
+    const pokemonWeight = data.weight;
+    const pokemonHeight = data.height;
+    const pokemonSpeed = data.stats[5].base_stat;
+    const pokemonSD = data.stats[4].base_stat;
+    const pokemonSA = data.stats[3].base_stat;
 
-        document.getElementById(
-            "container"
-        ).innerHTML += `<div class="col-lg-4 col-md-6 col-sm-12 px-5 gy-5 pokemoncard ${dataForName}  hide">
-    <img class="card-img-top" src="${dataForImg}" />
+    document.getElementById("container").innerHTML += `
+    <div class="col-lg-4 col-md-6 col-sm-12 px-5 gy-5 pokemoncard ${pokemonName}  hide">
+    <img class="card-img-top" src="${pokemonImage}" />
     <div class="ui">
-        <h3 class="name">${dataForNameCapitlized}</h3>
-        <div class="hp">HP - ${dataForHp} </div>
+        <h3 class="name">${pokemonName}</h3>
+        <div class="hp">HP - ${pokemonHp} </div>
         <div class="progress">
             <div class="progress-bar bg-warning " role="progressbar" aria-label="Success example"
-                style="width: ${dataForHp}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                style="width: ${pokemonHp}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
             </div>
         </div>
-        <div class="hp">Attack - ${dataForAttack}</div>
+        <div class="hp">Attack - ${pokemonAttack}</div>
         <div class="progress">
             <div class="progress-bar bg-danger" role="progressbar" aria-label="Success example"
-                style="width: ${dataForAttack}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                style="width: ${pokemonAttack}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            </div>
         </div>
-        <div class="hp">Defense - ${dataforDefense}</div>
+        <div class="hp">Defense - ${pokemonDefense}</div>
         <div class="progress">
             <div class="progress-bar bg-info" role="progressbar" aria-label="Success example"
-                style="width: ${dataforDefense}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                style="width: ${pokemonDefense}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            </div>
         </div>
-        <div class="hp">Type - ${dataForType}</div>
-        <button class="modal-open" id="pokemon${dataID}">More Information</button>
-
-        <div id="${dataID}" class="modal">
-
-            <!-- Modal content -->
+        <div class="hp">Type - ${pokemonType}</div>
+        <button class="modal-open" id="pokemon${pokemonID}">More Information</button>
+        <div id="${pokemonID}" class="modal">
             <div class="modal-content">
-                <span class="close" id="${dataID}">X</span>
+                <span class="close" id="${pokemonID}">X</span>
                 <div class="flexmodal">
-                    <img class="card-img-top" src="${PokeShinyImg}" />
+                    <img class="card-img-top" src="${pokemonShinyImg}" />
                     <div class="left align">
-                        <p>Pokedex number - ${dataID}</p>
+                        <p>Pokedex number - ${pokemonID}</p>
                         <p>Shiny Color</p>
-                        <p>Height - ${pokeHeight}</p>
-                        <p>Weight - ${pokeWeight}</p>
-                        <p>Abilities - ${abilities}</p>
+                        <p>Height - ${pokemonHeight}</p>
+                        <p>Weight - ${pokemonWeight}</p>
+                        <p>Abilities - ${pokemonAbilities}</p>
                     </div>
                 </div>
                 <div class="moreStats">
-                    <div class="hp">Attack - ${dataForAttack}</div>
+                    <div class="hp">Attack - ${pokemonAttack}</div>
                     <div class="progress">
                         <div class="progress-bar bg-danger" role="progressbar" aria-label="Success example"
-                            style="width: ${dataForAttack}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                            style="width: ${pokemonAttack}%" aria-valuenow="25" aria-valuemin="0"
+                            aria-valuemax="100">
                         </div>
                     </div>
-                    <div class="hp">Defense - ${dataforDefense}</div>
+                    <div class="hp">Defense - ${pokemonDefense}</div>
                     <div class="progress">
                         <div class="progress-bar bg-info" role="progressbar" aria-label="Success example"
-                            style="width: ${dataforDefense}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                            style="width: ${pokemonDefense}%" aria-valuenow="25" aria-valuemin="0"
+                            aria-valuemax="100">
                         </div>
                     </div>
-                    <div class="hp">HP - ${dataForHp} </div>
+                    <div class="hp">HP - ${pokemonHp} </div>
                     <div class="progress">
-                        <div class="progress-bar bg-warning " role="progressbar" aria-label="Success example"
-                            style="width: ${dataForHp}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar bg-warning " role="progressbar"
+                            aria-label="Success example" style="width: ${pokemonHp}%" aria-valuenow="25"
+                            aria-valuemin="0" aria-valuemax="100">
                         </div>
                     </div>
-                    <div class="hp">Spec Def - ${specDef}</div>
+                    <div class="hp">Spec Def - ${pokemonSD}</div>
                     <div class="progress">
                         <div class="progress-bar bg-success" role="progressbar" aria-label="Success example"
-                            style="width: ${specDef}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            style="width: ${pokemonSD}%" aria-valuenow="25" aria-valuemin="0"
+                            aria-valuemax="100"></div>
                     </div>
-                    <div class="hp">Spec Att - ${specAtt}</div>
+                    <div class="hp">Spec Att - ${pokemonSA}</div>
                     <div class="progress">
                         <div class="progress-bar bg-primary" role="progressbar" aria-label="Success example"
-                            style="width: ${specAtt}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            style="width: ${pokemonSA}%" aria-valuenow="25" aria-valuemin="0"
+                            aria-valuemax="100"></div>
                     </div>
-                    <div class="hp">Speed - ${speed}</div>
+                    <div class="hp">Speed - ${pokemonSpeed}</div>
                     <div class="progress">
                         <div class="progress-bar bg-dark" role="progressbar" aria-label="Success example"
-                            style="width: ${speed}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            style="width: ${pokemonSpeed}%" aria-valuenow="25" aria-valuemin="0"
+                            aria-valuemax="100"></div>
                     </div>
                 </div>
-
             </div>
         </div>
-
     </div>
 </div>
-</div>`;
-    }
+</div>
+`;
 }
 
-var theParent = document.querySelector("#container");
+const theParent = document.querySelector("#container");
 theParent.addEventListener("click", doSomething, false);
 
 function doSomething(e) {
     if (e.target !== e.currentTarget) {
-        var clickedItem = e.target.id;
+        let clickedItem = e.target.id;
         console.log(clickedItem);
         for (let i = 1; i <= 151; i++) {
             if (clickedItem == "pokemon" + i) {
@@ -145,34 +145,34 @@ function doSomething(e) {
     }
 }
 
-const serachInput = document.querySelector("[data-search]");
+// const serachInput = document.querySelector("[data-search]");
 
-let users1 = [];
-console.log(users1);
+// let users1 = [];
+// console.log(users1);
 
-const allHTML = document.getElementsByClassName("pokemoncard");
-console.log(allHTML.innerText);
+// const allHTML = document.getElementsByClassName("pokemoncard");
+// console.log(allHTML.innerText);
 
-serachInput.addEventListener("input", (e) => {
-    const value = e.target.value;
+// serachInput.addEventListener("input", (e) => {
+//     const value = e.target.value;
 
-    if (users1.includes(value) === true) {
-        console.log("hello");
-        document.querySelector(value).style.display = "none";
-    }
-});
+//     if (users1.includes(value) === true) {
+//         console.log("hello");
+//         document.querySelector(value).style.display = "none";
+//     }
+// });
 
-function searchFunction(data) {
-    obj = { data };
-    const entries = Object.entries(obj);
+// function searchFunction(data) {
+//     obj = { data };
+//     const entries = Object.entries(obj);
 
-    // console.log(entries);
-    users = entries.map((entries) => {
-        const name = entries[1].species.name;
-        // console.log(name);
-        return { names: name };
-    });
-    users = users[0].names;
-    users1.push(users);
-}
+//     // console.log(entries);
+//     users = entries.map((entries) => {
+//         const name = entries[1].species.name;
+//         // console.log(name);
+//         return { names: name };
+//     });
+//     users = users[0].names;
+//     users1.push(users);
+// }
 //  i am stuck i cant figure out how to target my element
