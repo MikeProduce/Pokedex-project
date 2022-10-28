@@ -12,7 +12,7 @@ const loadData = async (id) => {
         const res = await fetch(url);
         const data = await res.json();
         pokemonCard(data);
-        searchFunction(data);
+        // searchFunction(data);
     } catch (err) {
         console.log(err);
     }
@@ -40,38 +40,39 @@ function pokemonCard(data) {
     const pokemonSA = data.stats[3].base_stat;
 
     document.getElementById("container").innerHTML += `
-    <div class="col-lg-4 col-md-6 col-sm-12 px-5 gy-5 pokemoncard ${pokemonName}  hide">
+    <div class="col-lg-4 col-md-6 col-sm-12 px-5 gy-5 hide pokemoncard">
     <img class="card-img-top" src="${pokemonImage}" />
     <div class="ui">
-        <h3 class="name">${pokemonName}</h3>
+        <h3 class="name pokemonserch">${pokemonName}</h3>
         <div class="hp">HP - ${pokemonHp} </div>
         <div class="progress">
             <div class="progress-bar bg-warning " role="progressbar" aria-label="Success example"
                 style="width: ${pokemonHp}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
             </div>
         </div>
-        <div class="hp">Attack - ${pokemonAttack}</div>
+        <div class="attack">Attack - ${pokemonAttack}</div>
         <div class="progress">
             <div class="progress-bar bg-danger" role="progressbar" aria-label="Success example"
                 style="width: ${pokemonAttack}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
             </div>
         </div>
-        <div class="hp">Defense - ${pokemonDefense}</div>
+        <div class="defense">Defense - ${pokemonDefense}</div>
         <div class="progress">
             <div class="progress-bar bg-info" role="progressbar" aria-label="Success example"
                 style="width: ${pokemonDefense}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
             </div>
         </div>
-        <div class="hp">Type - ${pokemonType}</div>
+        <div class="type">Type - ${pokemonType}</div>
         <button class="modal-open" id="pokemon${pokemonID}">More Information</button>
         <div id="${pokemonID}" class="modal">
             <div class="modal-content">
                 <span class="close" id="${pokemonID}">X</span>
                 <div class="flexmodal">
+                <p>Shiny Color</p>
                     <img class="card-img-top" src="${pokemonShinyImg}" />
                     <div class="left align">
                         <p>Pokedex number - ${pokemonID}</p>
-                        <p>Shiny Color</p>
+                        
                         <p>Height - ${pokemonHeight}</p>
                         <p>Weight - ${pokemonWeight}</p>
                         <p>Abilities - ${pokemonAbilities}</p>
@@ -145,7 +146,32 @@ function doSomething(e) {
     }
 }
 
-// const serachInput = document.querySelector("[data-search]");
+const button = document.getElementById("button");
+
+const serachInput = document.querySelector("[data-search]");
+
+serachInput.addEventListener("input", (e) => {
+    const value = e.target.value;
+    console.log(value);
+
+    input = value.toLowerCase();
+    let cardcontainer = document.getElementsByClassName("pokemoncard");
+    console.log(cardcontainer);
+
+    for (i = 0; i < cardcontainer.length; i++) {
+        if (!cardcontainer[i].innerHTML.toLowerCase().includes(input)) {
+            cardcontainer[i].style.display = "none";
+            console.log("hi");
+        } else {
+            cardcontainer[i].style.display = "block";
+            console.log("no");
+        }
+    }
+});
+
+// if search value = search bar disapear the others
+
+//
 
 // let users1 = [];
 // console.log(users1);

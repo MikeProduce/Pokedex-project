@@ -48,6 +48,16 @@ h1 {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
+.modal-open:hover {
+    transform: translateX(10%) scale(1.04);
+    transform: translateY(10%) scale(1.04);
+}
+
+/* .modal-open:active {
+    transform: translateX(-5%) scale(0.96);
+    transform: translateY(-5%) scale(0.96);
+} */
+
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
@@ -95,4 +105,31 @@ h1 {
 
 .hide {
     display: block;
+}
+
+#searchbar {
+    margin-left: 15%;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+input[type="text"] {
+    width: 30%;
+    -webkit-transition: width 0.15s ease-in-out;
+    transition: width 0.15s ease-in-out;
+}
+
+/* When the input field gets focus,
+       change its width to 100% */
+input[type="text"]:focus {
+    width: 70%;
+}
+
+#list {
+    font-size: 1.5em;
+    margin-left: 90px;
+}
+
+.animals {
+    display: list-item;
 }
