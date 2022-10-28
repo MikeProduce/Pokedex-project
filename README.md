@@ -33,10 +33,7 @@ Users should be able to:
 
 ### Links
 
--   Solution URL:
-    [Ahttps://github.com/MikeProduce/coding-bootcamp-testimonials-slider-master](https://your-solution-url.com)
--   Live Site URL:
-    [https://mikeproduce.github.io/coding-bootcamp-testimonials-slider-master/](https://your-live-site-url.com)
+-   Live Site URL: [https://mikeproduce.github.io/Pokedex-project/]
 
 ### Built with
 
