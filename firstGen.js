@@ -12,7 +12,6 @@ const loadData = async (id) => {
         const res = await fetch(url);
         const data = await res.json();
         pokemonCard(data);
-        // searchFunction(data);
     } catch (err) {
         console.log(err);
     }
@@ -146,8 +145,6 @@ function doSomething(e) {
     }
 }
 
-const button = document.getElementById("button");
-
 const serachInput = document.querySelector("[data-search]");
 
 serachInput.addEventListener("input", (e) => {
@@ -168,37 +165,3 @@ serachInput.addEventListener("input", (e) => {
         }
     }
 });
-
-// if search value = search bar disapear the others
-
-//
-
-// let users1 = [];
-// console.log(users1);
-
-// const allHTML = document.getElementsByClassName("pokemoncard");
-// console.log(allHTML.innerText);
-
-// serachInput.addEventListener("input", (e) => {
-//     const value = e.target.value;
-
-//     if (users1.includes(value) === true) {
-//         console.log("hello");
-//         document.querySelector(value).style.display = "none";
-//     }
-// });
-
-// function searchFunction(data) {
-//     obj = { data };
-//     const entries = Object.entries(obj);
-
-//     // console.log(entries);
-//     users = entries.map((entries) => {
-//         const name = entries[1].species.name;
-//         // console.log(name);
-//         return { names: name };
-//     });
-//     users = users[0].names;
-//     users1.push(users);
-// }
-//  i am stuck i cant figure out how to target my element
