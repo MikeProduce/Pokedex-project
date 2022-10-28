@@ -20,25 +20,21 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&family=Silkscreen:wght@400;700&display=swap"
     rel="stylesheet" />
+  <script src="fourthGen.js" defer></script>
   <title>Document</title>
 </head>
 
 <body>
+
   <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <img class="navbar-brand pkmLogo" src="pokemonlogo.png" alt="" />
+      <h1>Pokemon</h1>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Type
-            </a>
-          </li>
-
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Generation
@@ -67,34 +63,20 @@
           </li>
         </ul>
         <div class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search for a pokemon" aria-label="Search"
-            id="searchpokemon" />
-          <button class="btn btn-outline-primary" type="submit" id="button">
-            Search
-          </button>
+          <input class="form-control me-2 searchbar" type="search" placeholder="Search for a pokemon"
+            aria-label="Search" id="searchpokemon" data-search />
         </div>
       </div>
     </div>
   </nav>
+
   <section class="container">
-    <div class="row row-cols" id="container"></div>
+    <div class="row row-cols" id="container">
 
-    <!-- <div class="card" style="width: 18rem">
-                <img id="image" class="card-img-top" />
-                <div class="card-body">
-                    <h5 class="card-title" id="name">Name:</h5>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item" id="hp">HP:</li>
-                    <li class="list-group-item" id="att">Attack:</li>
-                    <li class="list-group-item" id="def">Defense</li>
-                    <li class="list-group-item" id="type">Type:</li>
-                </ul>
-            </div> -->
+
+
+
   </section>
-
-
-  <script src="fourthGen.js"></script>
 </body>
 
 </html>

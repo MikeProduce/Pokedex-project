@@ -42,7 +42,7 @@ function pokemonCard(data) {
     <div class="col-lg-4 col-md-6 col-sm-12 px-5 gy-5 hide pokemoncard">
     <img class="card-img-top" src="${pokemonImage}" />
     <div class="ui">
-        <h3 class="name pokemonserch">${pokemonName}</h3>
+        <h3 class="name">${pokemonName}</h3>
         <div class="hp">HP - ${pokemonHp} </div>
         <div class="progress">
             <div class="progress-bar bg-warning " role="progressbar" aria-label="Success example"

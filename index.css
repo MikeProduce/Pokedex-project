@@ -1,7 +1,6 @@
 * {
     font-family: "Plus Jakarta Sans", sans-serif;
     font-family: "Silkscreen", cursive;
-    /* background-color: black; */
 }
 
 .pkmLogo {
@@ -34,7 +33,7 @@ h3 {
 h1 {
     color: aliceblue;
 }
-/* The Modal (background) */
+
 .modal {
     display: none;
     position: fixed;
@@ -48,17 +47,16 @@ h1 {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.modal-open:hover {
+/* .modal-open:hover {
     transform: translateX(10%) scale(1.04);
     transform: translateY(10%) scale(1.04);
-}
-
-/* .modal-open:active {
-    transform: translateX(-5%) scale(0.96);
-    transform: translateY(-5%) scale(0.96);
 } */
 
-/* Modal Content/Box */
+.modal-open:active {
+    transform: translateX(-5%) scale(0.96);
+    transform: translateY(-5%) scale(0.96);
+}
+
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
@@ -67,7 +65,6 @@ h1 {
     max-width: 90%;
 }
 
-/* The Close Button */
 .close {
     color: #aaa;
     float: right;
@@ -101,35 +98,4 @@ h1 {
     .modal-content {
         max-width: 30%;
     }
-}
-
-.hide {
-    display: block;
-}
-
-#searchbar {
-    margin-left: 15%;
-    padding: 15px;
-    border-radius: 10px;
-}
-
-input[type="text"] {
-    width: 30%;
-    -webkit-transition: width 0.15s ease-in-out;
-    transition: width 0.15s ease-in-out;
-}
-
-/* When the input field gets focus,
-       change its width to 100% */
-input[type="text"]:focus {
-    width: 70%;
-}
-
-#list {
-    font-size: 1.5em;
-    margin-left: 90px;
-}
-
-.animals {
-    display: list-item;
 }
