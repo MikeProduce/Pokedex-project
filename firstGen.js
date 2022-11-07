@@ -1,5 +1,15 @@
 "strict";
 
+const loader = document.getElementById("load-data");
+console.log(loader);
+
+showLoader = () => {
+    loader.classList.add("show");
+};
+stopLoader = () => {
+    loader.classList.remove("show");
+};
+
 const fetchPokemon = async () => {
     for (let i = 1; i <= 151; i++) {
         await loadData(i);
@@ -12,16 +22,13 @@ const loadData = async (id) => {
         const res = await fetch(url);
         const data = await res.json();
         pokemonCard(data);
-        sergiscool(data);
     } catch (err) {
         console.log(err);
     }
 };
+showLoader();
 fetchPokemon();
-
-function sergiscool(data) {
-    console.log(data);
-}
+stopLoader();
 
 function pokemonCard(data) {
     function capitlizeFirstLetter(string) {
