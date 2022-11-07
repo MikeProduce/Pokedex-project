@@ -1,13 +1,10 @@
 "strict";
 
-const loader = document.getElementById("load-data");
+const loader = document.querySelector(".classic-1");
 console.log(loader);
 
-showLoader = () => {
-    loader.classList.add("show");
-};
 stopLoader = () => {
-    loader.classList.remove("show");
+    loader.style.display = "none";
 };
 
 const fetchPokemon = async () => {
@@ -22,13 +19,13 @@ const loadData = async (id) => {
         const res = await fetch(url);
         const data = await res.json();
         pokemonCard(data);
+        stopLoader();
     } catch (err) {
         console.log(err);
     }
 };
-showLoader();
+
 fetchPokemon();
-stopLoader();
 
 function pokemonCard(data) {
     function capitlizeFirstLetter(string) {
