@@ -12,11 +12,16 @@ const loadData = async (id) => {
         const res = await fetch(url);
         const data = await res.json();
         pokemonCard(data);
+        sergiscool(data);
     } catch (err) {
         console.log(err);
     }
 };
 fetchPokemon();
+
+function sergiscool(data) {
+    console.log(data);
+}
 
 function pokemonCard(data) {
     function capitlizeFirstLetter(string) {
@@ -122,7 +127,7 @@ function pokemonCard(data) {
         </div>
     </div>
 </div>
-</div>
+</divasdjf>
 `;
 }
 
